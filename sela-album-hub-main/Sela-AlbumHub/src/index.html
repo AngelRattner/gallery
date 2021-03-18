@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>SelaAlbumHub</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" type="text/css"
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/f85ceca62d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="light-mode">
+    <div id="bgIMG">
+      <img src="./assets/images/selaalbumhub-removebg-preview.png" class="ribbon">
+    </div>
+
+    <!-- hamburger menu -->
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a><input type="checkbox" #CB id="colorCB" onchange="darkModeChange()">Application theme - light/dark</a>
+      <a href="/Log-in">Enter/Exit private mode</a>
+      <a href="/Edit-category">Edit categories</a>
+      <a id="open" onclick="closeNav()">About</a>
+      <a href="#">Exit application</a>
+    </div>
+
+    <div id="main">
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+      <app-root></app-root>
+
+      <!-- about pop up -->
+      <div class="modal-container" id="modal_container">
+        <div class="modal">
+          <h1>About</h1>
+          <p>
+            Sela album hub is a magnificent solution for customers who love to store photos.
+            No more mess with your local photos on your computer. This app has single source of all your photos.
+          </p>
+          <button id="close" class="close">close</button>
+        </div>
+      </div>
+
+      <!-- user Menu dropup -->
+      <div class="userMenu dropup" onclick="topFunction()" id="myBtn" title="Go to top">
+        <a href="javascript:void(0)" class="dropbtn" id="userBTN"><i class="fas fa-user"></i></a>
+        <div class="dropup-content">
+          <a onclick="setCookie()">show image on list/table</a>
+          <a href="/slide-show">start random slideshow</a>
+          <a onclick="switchMode()">switch mode to import/observe images</a>
+          <a href="#" id="dis">share images</a>
+          <a href="#" id="dis">sync with cloud storage</a>
+        </div>
+      </div>
+
+    </div>
+
+    <script>
+      // opem/close func
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+      }
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+      }
+
+      //dark mode func
+      function darkModeChange() {
+        let cb = document.getElementById('colorCB');
+        let USERbutton = document.getElementById('userBTN');
+        if (cb.checked) {
+          document.body.style.backgroundColor = "#1a0008";
+          document.getElementsByTagName('body')[0].style.color = "#ffffff"
+           USERbutton.style.color = "#ffffff";
+        } else {
+          document.body.style.backgroundColor = "#e2e2e2";
+          document.getElementsByTagName('body')[0].style.color = "black"
+           USERbutton.style.color = "#000000";
+        }
+      }
+
+      //about pop up func
+      const open = document.getElementById('open')
+      const modal = document.getElementById('modal_container')
+      const close = document.getElementById('close')
+
+      open.addEventListener('click', () => {
+        modal.classList.add('show')
+      });
+      close.addEventListener('click', () => {
+        modal.classList.remove('show')
+      });
+
+      //Get the user button:
+      mybutton = document.getElementById("myBtn");
+      USERbutton = document.getElementById("userBTN");
+
+      // Gallery page replace location to add image
+      // else nevigate yo add-image page 
+      function switchMode() {
+        let url = "http://localhost:4200/"
+        let galleryUrl = "http://localhost:4200/Gallery"
+        let slideShowUrl = "http://localhost:4200/slide-show"
+
+        if ((window.location.href == galleryUrl) || (window.location.href == slideShowUrl)) {
+          window.location.replace(url + "Add-image");
+        } else {
+          window.location.replace(url + "Gallery");
+        }
+      }
+      
+      //function to change diaply view using cookies.
+      function setCookie() {
+        let c = document.cookie;
+        console.log("work1");
+        if (c.includes("grid")) {
+          document.cookie = "displayType=list"
+          alert("gallery will display images in List view")
+        } else {
+          document.cookie = "displayType=grid"
+          alert("gallery will display images in Grid view")
+        }
+      }
+
+    </script>
+  </div>
+</body>
+
+</html>

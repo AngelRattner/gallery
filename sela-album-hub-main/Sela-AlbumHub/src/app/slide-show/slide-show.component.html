@@ -1,0 +1,23 @@
+<div id="name">
+  <h1>{{galeryName}}</h1>
+</div>
+<div class="container">
+  <a class="btn">
+    <span>
+      <span>
+        <div class="container-inner" *ngFor="let image of images | slice:0:1;">
+
+          <img (click)="getRandomInt(images.length)"
+            [src]="sanitizeImageUrl(this.dataService.getSingleImaege(images[getRandomInt(images.length)].id))"
+            alt="Avatar">
+
+        </div>
+      </span>
+    </span>
+
+  </a>
+  <button id="exit" type="submit" class="learn-more button" (click)="backClicked()">GO Back <i
+      class="far fa-hand-point-left"></i></button>
+</div>
+    <button (click)='startTimer()' id="start" class="learn-more button">Start Timer<i class="fas fa-stopwatch"></i></button>
+    <button (click)='pauseTimer()' id="pause" class="learn-more button">Pause<i class="fas fa-hand-paper"></i></button>

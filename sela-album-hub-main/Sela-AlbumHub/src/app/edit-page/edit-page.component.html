@@ -1,0 +1,41 @@
+<div class="main">
+    <div class="map">
+        <p>choose location:</p>
+        <app-google-map (click)="mapClick()"></app-google-map>
+    </div>
+
+    <div class="container">
+        <input type="text" name="caption" id="caption" #caption required minlength="3"
+            value="{{recivedPhoto.caption}}"><br>
+        <img [src]="sanitizeImageUrl(this.dataService.getSingleImaege(recivedPhoto.id))" alt="Avatar" name="image"
+            id="bg">
+        <form [formGroup]="angForm" novalidate>
+
+            <div id="dropdown">
+                <div class="row">
+                    <div class="col-md-4">
+                        <input type="checkbox" id="CboxFavorite" #favorite [checked]="recivedPhoto.favorite">
+                        <label for="CboxFavorite" id="CboxFavorite"><i class="fas fa-star"></i></label>
+
+                        <input type="checkbox" id="CboxPrivate" #private [checked]="recivedPhoto.privateMode">
+                        <label for="CboxPrivate" id="CboxPrivate"><i class="fas fa-lock"></i></label>
+                        <h3>Select categories</h3>
+                        <form [formGroup]="myForm">
+                            <ng-multiselect-dropdown [settings]="dropdownSettings" [data]="categoriesList"
+                                [(ngModel)]="selectedItems" name="categories" [placeholder]="'Select Categories'"
+                                (onSelect)="onItemSelect($event)" (onDeSelect)="onItemDeSelect($event)"
+                                (onSelectAll)="onSelectAll($event)">
+                            </ng-multiselect-dropdown>
+                        </form>
+                    </div>
+                </div>
+            </div><br><br>
+
+            <div class="col-sm-6"> <button class="btn btn-primary" type="submit"
+                    (click)="save(caption.value, favorite.checked, private.checked)"><i class="fas fa-upload"
+                        style="color: blue;"></i></button>
+            </div>
+
+        </form>
+    </div>
+</div>

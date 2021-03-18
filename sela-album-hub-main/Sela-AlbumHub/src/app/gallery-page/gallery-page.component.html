@@ -1,0 +1,63 @@
+
+<input type="text" #categorySearch>
+<button (click)="serchByCategory(categorySearch.value)">search by category</button><br><br>
+<input type="text" #captionSearch id="captionSearch">
+<button (click)="serchByCaption()">search by caption</button><br><br>
+<div>
+  <span>show only favorite:</span>
+  <div id="container">
+    <div class="toggle">
+      <input type="checkbox" name="toggle" class="check-checkbox" id="mytoggle" (change)="showFavorite()">
+      <label class="check-label" for="mytoggle">
+        <div id="background"></div>
+        <span class="face">
+          <span class="face-container">
+            <span class="eye left"></span>
+            <span class="eye right"></span>
+            <span class="mouth"></span>
+          </span>
+        </span>
+      </label>
+    </div>
+  </div>
+
+  <div id="name"><h1>{{galeryName}}</h1></div>
+
+  <div class="row">
+    <div *ngFor="let image of images">
+      <div [class.column]="viewDisplay">
+        <div [class.List]="counterviewDisplay">
+          <div class="flip-card" (dblclick)="editCategories(image.id)">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img [src]="sanitizeImageUrl(this.dataService.getSingleImaege(image.id))" alt="Avatar">
+              </div>
+              <div class="flip-card-back">
+                <p>{{image.id}}</p>
+                <p>is favorite: {{image.favorite}}</p>
+                <p>is private: {{image.privateMode}}</p>
+                <div *ngFor="let cat of image.categories">
+                  <p>{{cat}}</p>
+                </div>
+                <p>{{image.caption}}</p>
+                <app-google-map [lat]="image.latitudeLocation" [lng]="image.longitudeLocation"></app-google-map>
+              </div>
+            </div>
+          </div>
+          <button (click)="deleteImage(image.id)">DELETE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="scroll-to-top" [ngClass]="{'show-scrollTop': windowScrolled}">
+    <button type="button" class="btn active" data-toggle="button" aria-pressed="true" (click)="scrollToTop()">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+  </div>
+
+  <a routerLink="/slide-show">
+    <button class="button button2" style="vertical-align:middle" id="btn"><span>NEXT</span></button>
+  </a><br>
+</div>

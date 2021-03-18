@@ -1,0 +1,62 @@
+<body>
+  <div>
+    <form [formGroup]="fileUploadForm" (ngSubmit)="onFormSubmit(caption.value, favorite.checked, private.checked)">
+      <div class="row">
+        <div class="col-sm-12">
+          <div>
+            <h6 class="head-title margin-top-8"><span>Select Image File</span></h6>
+          </div>
+        </div>
+        <div class="col-sm-6">
+
+          <div class="custom-file">
+
+            <input type="file" class="custom-file-input" id="customFile" name="uploadedImage"
+              (change)="onFileSelect($event)" (click)="showFunction()" #UploadFileInput>
+
+            <label class="custom-file-label" for="customFile">{{fileInputLabel || 'Choose File'}}</label>
+
+          </div>
+
+        </div>
+      </div><br>
+
+      <div>
+        <form [formGroup]="angForm" novalidate>
+          <label for="caption">caption:</label>
+          <input type="text" name="caption" id="caption" formControlName="caption" #caption required minlength="3">
+
+          <input type="checkbox" id="CboxFavorite" #favorite>
+          <label for="CboxFavorite">favorite</label>
+
+          <input type="checkbox" id="CboxPrivate" #private>
+          <label for="CboxPrivate">private Mode</label>
+
+          <div>
+            <p>choose location:</p>
+            <app-google-map></app-google-map>
+            <button [disabled]="locationBool" (click)="getCurrentLocation()">Get Device Location</button>
+          </div>
+          <div style="margin-bottom: 20px;">
+            <div class="row">
+              <div class="col-md-4">
+                <h3>Select Multiple Cities</h3>
+                <form [formGroup]="myForm">
+                  <ng-multiselect-dropdown [settings]="dropdownSettings" [data]="cities" name="city"
+                    [placeholder]="'Select Categories'" [disabled]="disabled" (onSelect)="onItemSelect($event)"
+                    (onDeSelect)="onItemDeSelect($event)" (onSelectAll)="onSelectAll($event)"
+                    [(ngModel)]="selectedItems">
+                  </ng-multiselect-dropdown>
+                </form>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="col-sm-6"> <button class="btn btn-primary learn-more" type="submit"
+            (click)="hideFunction()">Upload</button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</body>

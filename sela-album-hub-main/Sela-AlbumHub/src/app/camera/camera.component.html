@@ -1,0 +1,39 @@
+<div id="app">
+  <div><video #video id="video" width="640" height="480" autoplay></video></div>
+  <div><button id="snap" (click)="showIMG()">Snap Photo</button></div>
+  <canvas #canvas id="canvas" width="640" height="480"></canvas>
+  <button type="submit" (click)="capture()">SAVE ME</button>
+</div>
+
+<input #imageInput hidden="true" type="file" onclick="this.value=null" (change)="onFileSelected($event)"
+  accept="image/*" />
+
+
+<div *ngIf="div1">
+  <form>
+    <input type="text" id="caption" #caption>
+    <label for="caption">caption:</label>
+
+    <input type="checkbox" id="CboxFavorite" #favorite>
+    <label for="CboxFavorite">Favorite</label>
+
+    <input type="checkbox" id="CboxPrivate" #private>
+    <label for="CboxPrivate">Private Mode</label>
+
+    <div style="margin-bottom: 20px;">
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Select Multiple Cities</h3>
+          <form [formGroup]="myForm">
+            <ng-multiselect-dropdown [settings]="dropdownSettings" [data]="categoriesList" name="categories"
+              [placeholder]="'Select Categories'" [disabled]="disabled"
+              (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)"
+              (onDeSelect)="onItemDeSelect($event)" [(ngModel)]="selectedItems">
+            </ng-multiselect-dropdown>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </form>
+</div>

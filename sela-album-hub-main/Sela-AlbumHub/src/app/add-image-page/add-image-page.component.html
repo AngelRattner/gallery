@@ -1,0 +1,21 @@
+<div>
+    <button class="btn btn-success" id="cameraBTN" (click)="showCameraComp()" [disabled]="camChecked"> CAMERA
+    </button>
+    <button class="btn btn-success" id="localBTN" (click)="showLocalComp()"> Local Machine </button>
+    <button class="btn btn-success" id="onlineBTN" (click)="showOnlineComp()"> Online Images </button>
+</div>
+
+<h2 *ngIf="showCamera">
+    <app-camera></app-camera>
+</h2>
+<h2 *ngIf="showLocal">
+    <app-local></app-local>
+</h2>
+<h2 *ngIf="showOnline">
+    <app-online></app-online>
+</h2>
+
+<div class="doneBTN">
+    <a routerLink="/Gallery"><button class="button button2" style="vertical-align:middle" id="btn"> DONE
+        </button></a>
+</div>

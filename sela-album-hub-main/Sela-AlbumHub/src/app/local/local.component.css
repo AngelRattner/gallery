@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:900");
+#myDIV {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    background-color: lightblue;
+    margin-top: 20px;
+  }
+
+  .col-md-4{
+    width: 800px;
+  }
+
+  .btn {
+    position: absolute;
+    right: 1100px;
+    top: 500px;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: inherit;
+    font-family: inherit; 
+    margin-top: 70px;
+    margin-right: 18px;
+    background-color: rgba(65, 42, 194, 0.4);
+  }
+  .btn .learn-more {
+    transition: all 0.5s cubic-bezier(0.65, -0.25, 0.25, 1.95);
+    font-weight: 900;
+    color: #202121;
+    padding: 1.25rem 2rem;
+    background: #fff;
+    text-transform: uppercase;
+  }
+  .btn .learn-more:hover, button.learn-more:focus, button.learn-more:active {
+    letter-spacing: 0.125rem;
+  }
+  
+
+
+

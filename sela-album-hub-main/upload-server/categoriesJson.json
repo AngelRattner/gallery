@@ -1,0 +1,44 @@
+{
+    "categories": [
+        {
+            "item_id": "1",
+            "item_text": "Animals"
+        },
+        {
+            "item_id": "2",
+            "item_text": "Fashion"
+        },
+        {
+            "item_id": "3",
+            "item_text": "Food"
+        },
+        {
+            "item_id": "4",
+            "item_text": "Sport"
+        },
+        {
+            "item_id": "5",
+            "item_text": "Nature"
+        },
+        {
+            "item_id": "6",
+            "item_text": "Beautiful"
+        },
+        {
+            "item_id": "7",
+            "item_text": "Bizar"
+        },
+        {
+            "item_id": "8",
+            "item_text": "Love"
+        },
+        {
+            "item_id": "9",
+            "item_text": "Unique"
+        },
+        {
+            "item_id": "10",
+            "item_text": "Fun"
+        }
+    ]
+}

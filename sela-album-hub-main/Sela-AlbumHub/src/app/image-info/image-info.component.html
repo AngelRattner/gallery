@@ -1,0 +1,14 @@
+<div>
+    <form>
+        <input type="text" id="caption" #caption>
+        <label for="caption">caption:</label>
+
+        <input type="checkbox" id="CboxFavorite" #favorite >
+        <label for="CboxFavorite">Favorite</label>
+
+        <input type="checkbox" id="CboxPrivate" #private >
+        <label for="CboxPrivate">Private Mode</label>
+
+        <button type="submit" (click)="submit(caption.value, favorite.checked, private.checked)">Submit</button>
+    </form>
+</div>

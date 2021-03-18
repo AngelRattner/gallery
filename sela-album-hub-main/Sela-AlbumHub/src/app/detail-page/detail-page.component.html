@@ -1,0 +1,50 @@
+<script src="https://kit.fontawesome.com/f85ceca62d.js" crossorigin="anonymous"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css"
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<div class="container">
+    <div class="threeD">
+        Please Fill The Fields
+    </div><br>
+    <div class="center1">
+
+        <label for="inp" class="inp">
+            <input type="text" id="inp" #name placeholder="Library Name" pattern=".{3,}" required>
+            <svg width="280px" height="18px" viewBox="0 0 280 18" class="border">
+                <path
+                    d="M0,12 L223.166144,12 C217.241379,12 217.899687,12 225.141066,12 C236.003135,12 241.9279,12 249.827586,12 C257.727273,12 264.639498,12 274.514107,12 C281.097179,12 281.755486,12 276.489028,12">
+                </path>
+            </svg>
+            <svg width="14px" height="12px" viewBox="0 0 14 12" class="check">
+                <path d="M1 7 5.5 11 L13 1"></path>
+            </svg>
+        </label><br>
+        <label for="inp" class="inp">
+            <input type="text" id="inp" #des placeholder="description" pattern=".{3,}" required>
+            <svg width="280px" height="18px" viewBox="0 0 280 18" class="border">
+                <path
+                    d="M0,12 L223.166144,12 C217.241379,12 217.899687,12 225.141066,12 C236.003135,12 241.9279,12 249.827586,12 C257.727273,12 264.639498,12 274.514107,12 C281.097179,12 281.755486,12 276.489028,12">
+                </path>
+            </svg>
+            <svg width="14px" height="12px" viewBox="0 0 14 12" class="check">
+                <path d="M1 7 5.5 11 L13 1"></path>
+            </svg>
+        </label>
+
+
+        <div class="selection">
+            <select name="DD" id="DD" #drop style='font-family:Arial, FontAwesome; width: 90px; height: 30px;'>
+                <option value='grid' style='color:goldenrod;'>&#xf58d; &nbsp; Grid</option>
+                <option value='list' style='color:red;'>&#xf0ca; &nbsp; List</option>
+            </select><br><br>
+
+            <button class="btn-outline success" (click)="saveName(name.value, des.value, drop.value)"><i
+                    class="fas fa-check-circle"></i><span>save</span></button>
+        </div>
+        <div *ngIf="nameValidation">
+            <a routerLink="/Add-image">
+                <button class="button button2" style="vertical-align:middle" id="btn"><span>NEXT</span></button>
+            </a><br>
+        </div>
+
+    </div>

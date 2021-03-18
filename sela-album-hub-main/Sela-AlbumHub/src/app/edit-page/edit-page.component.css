@@ -1,0 +1,47 @@
+#photo{
+    text-align: right;
+    right: 70%;
+    top: 300px;
+}
+
+#dropdown{
+    width: 500px;
+}
+
+img{
+    width: 555px;
+}
+.btn{
+    width: 50px;
+    height: 35px;
+    font-size: 25px;
+}
+.container{
+
+    top: 100px;
+    left: 400px;
+    width: 555px;
+}
+.map{
+    position: absolute;
+    width: 400px;
+    right: 500px;
+    top: 280px;
+}
+
+
+#bg{
+    position: relative; 
+    background: ('image') no-repeat;
+    background-size: contain;
+     background-image: ("image");
+}
+
+#CboxPrivate{
+    font-size: 25px;
+}
+#CboxFavorite{
+    font-size: 25px;
+    color: yellow; 
+}
+

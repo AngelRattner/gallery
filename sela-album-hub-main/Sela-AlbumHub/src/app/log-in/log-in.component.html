@@ -1,0 +1,22 @@
+<div class="container" *ngIf="logInDisplay">
+        <form>
+                <div class="group">
+                        <input required type="password" id="passInput" #passInput>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>enter password</label>
+                </div>
+        </form>
+
+        <button id="passBTN" type="submit" class="learn-more" (click)="logIn()">Log In <i
+                        class="fas fa-sign-in-alt"></i></button>
+        <button id="exit" type="submit" class="learn-more" (click)="backClicked()">GO Back <i
+                        class="far fa-hand-point-left"></i></button>
+
+
+
+</div>
+<div class="container">
+        <button *ngIf="logOutDisplay" id="logOut" class="learn-more" type="submit" (click)="logOut()">Log Out <i
+                        class="fas fa-sign-out-alt"></i></button><br>
+</div>

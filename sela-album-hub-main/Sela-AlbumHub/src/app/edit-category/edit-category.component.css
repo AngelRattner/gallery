@@ -1,0 +1,46 @@
+.container{
+    top: 100px;
+    text-align: center;
+}
+
+input{
+    border-radius: 25px;
+    border-color: brown;
+    height: 60px;
+    width: 350px;
+    font-size: 30px;
+    text-align: center;
+    color: brown;
+}
+
+h1{
+    margin-bottom: 100px;
+    font-family: "Sofia", sans-serif;
+    font-size: 150px;
+    color: brown;
+}
+
+.button {
+    border-radius: 7px;
+    border-color: brown;
+    color: brown;
+    position: relative;
+
+    cursor: pointer;
+    outline: none;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: inherit;
+    font-family: "Sofia", sans-serif;
+  }
+  .button.learn-more {
+    transition: all 0.5s cubic-bezier(0.65, -0.25, 0.25, 1.95);
+    font-weight: 900;
+    color: #202121;
+    padding: 1.25rem 2rem;
+    background: #fff;
+    text-transform: uppercase;
+  }
+  .button.learn-more:hover, button.learn-more:focus, button.learn-more:active {
+    letter-spacing: 0.125rem;
+  }

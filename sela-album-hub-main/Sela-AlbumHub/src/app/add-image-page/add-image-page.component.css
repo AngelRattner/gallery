@@ -1,0 +1,76 @@
+.animate-show-hide.ng-hide {
+    opacity: 0;
+  }
+  
+  .animate-show-hide.ng-hide-add,
+  .animate-show-hide.ng-hide-remove {
+    transition: all linear 0.5s;
+  }
+  
+  .check-element {
+    border: 1px solid black;
+    opacity: 1;
+    padding: 10px;
+  }
+
+
+.doneBTN{
+  position: absolute;
+  top: 300px;
+  left: 500px;
+  text-align: left;
+}
+
+#btn{
+  position: absolute;
+  top: 400px;
+  left: 900px;
+  text-align: left;
+}
+
+/*#region Button */
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  border: none;
+  color: #FFFFFF; 
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to bottom right, rgb(0, 195, 255), rgb(0, 217, 255));
+  text-align: center;
+  font-size: 26px;
+  padding: 30px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 50px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.button2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+/*#endregion */

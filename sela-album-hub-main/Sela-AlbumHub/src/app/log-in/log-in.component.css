@@ -1,0 +1,172 @@
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:900");
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: border-box;
+}
+
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: inherit;
+  font-family: inherit; 
+  margin-top: 70px;
+  margin-right: 18px;
+}
+button.learn-more {
+  transition: all 0.5s cubic-bezier(0.65, -0.25, 0.25, 1.95);
+  font-weight: 900;
+  color: #202121;
+  padding: 1.25rem 2rem;
+  background: #fff;
+  text-transform: uppercase;
+}
+button.learn-more:hover, button.learn-more:focus, button.learn-more:active {
+  letter-spacing: 0.125rem;
+}
+
+.container{
+    top: 400px;
+    left: 0%;
+    align-items: center;
+    text-align: center;
+}
+
+#logOut{
+    background-color:rgba(233, 7, 7, 0.4);
+    width: 250px;
+    height: 90px;
+}
+
+#exit{
+    background-color:rgba(233, 7, 7, 0.4);
+}
+#passBTN{
+    background-color:rgb(51, 204, 51, 0.4);
+}
+
+
+/*#region input*/
+.group {
+    position:absolute;
+    left: 770px;
+    margin-bottom: 45px;
+  }
+  input {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 315px;
+  }
+  input:focus {
+    outline: none;
+  }
+  
+  /* LABEL ======================================= */
+  label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+  
+  /* active state */
+  input:focus ~ label,
+  input:valid ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #5264ae;
+  }
+  
+  /* BOTTOM BARS ================================= */
+  .bar {
+    position: relative;
+    display: block;
+    width: 315px;
+  }
+  .bar:before,
+  .bar:after {
+    content: "";
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #5264ae;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+  .bar:before {
+    left: 50%;
+  }
+  .bar:after {
+    right: 50%;
+  }
+  
+  /* active state */
+  input:focus ~ .bar:before,
+  input:focus ~ .bar:after {
+    width: 50%;
+  }
+  
+  /* HIGHLIGHTER ================================== */
+  .highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  
+  /* active state */
+  input:focus ~ .highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+  }
+  
+  /* ANIMATIONS ================ */
+  @-webkit-keyframes inputHighlighter {
+    from {
+      background: #5264ae;
+    }
+    to {
+      width: 0;
+      background: transparent;
+    }
+  }
+  @-moz-keyframes inputHighlighter {
+    from {
+      background: #5264ae;
+    }
+    to {
+      width: 0;
+      background: transparent;
+    }
+  }
+  @keyframes inputHighlighter {
+    from {
+      background: #5264ae;
+    }
+    to {
+      width: 0;
+      background: transparent;
+    }
+  }
+  
+/*#endregion*/

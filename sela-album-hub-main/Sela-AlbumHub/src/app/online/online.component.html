@@ -1,0 +1,34 @@
+<div class="card-header main-search">    
+    <div class="row">    
+      <div class="col-12 col-md-3 col-xl-3">    
+        <input [(ngModel)]="searchData" class="AutoFocus form-control" placeholder="Type something..." type="text">    
+      </div>    
+      <div class="col-12 col-md-3 col-xl-3">    
+        <input name="deliveryNumber" [(ngModel)]="perPage" class="AutoFocus form-control" placeholder="No of Images"    
+          type="text">    
+      </div>    
+      <div class="ml-auto">    
+        <input type="button" (click)="search()" value="Search" class="btn btn-primary search-btn">
+      </div>    
+    </div>    
+  </div>    
+  <div class="container">    
+    <div class="row">    
+      <div *ngFor="let pic of photos; index as i" class="col-sm-4">    
+        <div style="margin-top: 10px;" class="card">    
+          <img class="card-img-top" [src]="pic.src.landscape" alt="Card image cap" [id]=i>    
+          <div class="card-body"> 
+          <button (click)="downloadIMG(i)" class="btn btn-primary" id="downBTN" download href="pic.url">Download <i class="fas fa-download" style="color: #00b33c;"></i></button>
+          </div>    
+        </div>    
+      </div>    
+    </div>    
+  </div>     
+
+  <div class="scroll-to-top" [ngClass]="{'show-scrollTop': windowScrolled}">
+    <button type="button" class="btn active" data-toggle="button" aria-pressed="true" (click)="scrollToTop()">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+  </div>
+
+  <canvas #canvas id="canvas" width="640" height="480"></canvas>
